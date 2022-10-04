@@ -1,0 +1,1 @@
+yum update -y;yum install epel-release -y;yum install openssh-server gmp-devel -y yum mc install screen nano wget bzip2 gcc gcc-c++ sudo xz git httpd xinetd ElectricFence tftp tftp-server mysql mariadb mariadb-server gcc glibc-static php phpmyadmin -y;sudo systemctl start sshd
