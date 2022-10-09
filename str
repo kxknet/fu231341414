@@ -2,13 +2,12 @@ yum update -y;yum install epel-release -y;yum install openssh-server gmp-devel -
 sudo systemctl start sshd
 wait
 service mariadb start
-mkdir tmp
 mkdir /etc/xcompile
-cd /root/tmp/cross-complier/
+mv *.zip /etc/xcompile
+cd /etc/xcompile
 unzip *.zip
 wait
-mv * /etc/xcompile
-cd /etc/xcompile
+cd /etc/xcompile/cross-complier/
 tar -xf arc_gnu_2017.09_prebuilt_uclibc_le_arc700_linux_install.tar.gz
 tar -xf cross-compiler-i486.tar.gz
 tar -jxf cross-compiler-i586.tar.bz2
@@ -41,6 +40,8 @@ mv cross-compiler-armv5l armv5l
 mv cross-compiler-armv6l armv6l
 mv cross-compiler-armv7l armv7l
 mv cross-compiler-x86_64 x86_64
+wait
+mv * /etc/xcompile
 cd /tmp
 wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
 sha256sum go1.13.linux-amd64.tar.gz
